@@ -51,8 +51,8 @@ int main(int argc, char **argv){
   pnh.getParam("clientIP", IPadress);
   pnh.getParam("clientPort", portNumber);
   simple_udp udp0(IPadress, portNumber);
-  ros::Subscriber sub_i = nh.subscribe("sentUDP_i", 10, intData_callback);
-  ros::Subscriber sub_f = nh.subscribe("sentUDP_f", 10, floatData_callback);
+  ros::Subscriber sub_i = nh.subscribe("receivedUDP_i", 10, intData_callback);
+  ros::Subscriber sub_f = nh.subscribe("receiveUDP_f", 10, floatData_callback);
 
   std::string send_data;
   ros::Rate loop_rate(10);
